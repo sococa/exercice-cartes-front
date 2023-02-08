@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exercice_carte_front';
+  title = 'Jeu de cartes LevelUp';
 }
