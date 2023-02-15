@@ -1,1 +1,18 @@
-<p>joueur-details works!</p>
+<h1>Cartes de {{joueurs?.nom}}</h1>
+<div class="container">
+  <mat-card class="card" *ngFor="let carte of joueurCartes">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>{{ carte.nom }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image
+      src="https://imgs.search.brave.com/yk5K4LSRgp-GDoQ77t6xZKzm_I3DDANEuWJ6ajj1dts/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvcG9rZW1vbi9w/b2tlbW9uX1BORzE0/OC5wbmc"
+      alt="image pikachu">
+    <mat-card-content>
+      <p>
+        {{ carte.description }}
+      </p>
+      <button disabled>{{ carte.chiffre }}</button>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -2,7 +2,7 @@
   <mat-label>Liste des joueurs</mat-label>
   <mat-select>
     <mat-option *ngFor="let joueur of joueurs" [value]="joueur.nom">
-      <a class="nav-link">
+      <a class="nav-link" href="http://localhost:4200/joueurs/{{joueur.id}}">
         {{joueur.nom}}
       </a>
     </mat-option>

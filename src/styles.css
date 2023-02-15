@@ -2,3 +2,26 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card img{
+    max-width: 300px;
+}
+
+.card p{
+    max-width: 300px;
+}
+
+.mat-mdc-card {
+    position: relative;
+    background-color: whitesmoke;
+    max-width: 30vw;
+}
+h1 {
+    text-align: center;
+}

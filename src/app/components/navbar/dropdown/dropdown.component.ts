@@ -1,16 +1,6 @@
-import { Component } from '@angular/core';
-import { JoueursService } from 'src/app/services/joueurs.service';
-import { OnInit } from '@angular/core';
-
-interface Player {
-  id: number;
-  nom: string;
-  email: string;
-}
-
-export interface Data {
-  "hydra:member": Player[];
-}
+import { Component, OnInit } from '@angular/core';
+import { JoueursService, Player } from 'src/app/services/joueurs.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dropdown',
@@ -20,17 +10,22 @@ export interface Data {
 })
 export class DropdownComponent implements OnInit {
   title = 'exercice_carte_front';
-  joueurs: Player[];
+  
+  public joueurs: Player[];
+  public id = this.route.snapshot.paramMap.get('id');
 
-  constructor(private joueursService: JoueursService) {}
+  constructor(
+    private joueursService: JoueursService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+
+    const id = this.route.snapshot.paramMap.get('id')
+
     this.joueursService.getJoueurs().subscribe((data) => {
-      this.joueurs = data["hydra:member"];  
+      this.joueurs = data['hydra:member'];
     });
 
-    this.joueursService.getOneJoueur(1).subscribe((data) => {
-      this.joueurs = data["hydra:member"];
-    })
   }
 }
